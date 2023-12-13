@@ -38,10 +38,7 @@ class MyCanvas(context : Context, attrs : AttributeSet) : View(context,attrs) {
         when(event.action){
             MotionEvent.ACTION_DOWN -> path.moveTo(event.rawX,event.rawY)
             MotionEvent.ACTION_MOVE ->path.lineTo(event.rawX,event.rawY)
-            MotionEvent.ACTION_UP -> {
-                canvas.drawPath(path,paint)
-
-            }
+            MotionEvent.ACTION_UP -> canvas.drawPath(path,paint)
             else -> return false
         }
         invalidate()
